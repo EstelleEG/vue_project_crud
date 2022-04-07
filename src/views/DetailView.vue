@@ -18,12 +18,12 @@
 
 import axios from "axios"
 
-
 export default {
 	name: 'DetailView',
 	data: () => ({
 		book: {}
 	}),
+    
 	async created() {
 		const { bookId } = this.$route.params
         console.log(bookId)
