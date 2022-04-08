@@ -8,7 +8,7 @@
 
     <input type="text" v-model="book.ISBN">
 
-    <input type="text" v-model="book.dimensions">
+    <input type="text" v-model="book.volume">
 
     <input type="text" v-model="book.designation">
 
@@ -28,14 +28,23 @@ export default {
   },
 
   methods: {
-    newBook() {
-      axios.post('http://localhost:8000/api/create.php', JSON.stringify({
-        book: this.book
-      }))
+    async newBook() {
+      await axios.post(
+          'http://localhost:8000/api/create.php',
+          {
+            id: this.book.id,
+            name: this.book.name,
+            author: this.book.author,
+            collection: this.book.collection,
+            ISBN: this.book.ISBN,
+            dimensions: this.book.volume,
+            designation: this.book.designation,
+          }
+      )
+      await this.$router.push({name: 'list'});
     },
   },
 }
-
 
 
 </script>

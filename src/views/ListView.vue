@@ -43,7 +43,10 @@ export default {
 
     },
     deleteBook(bookId){
-    axios.delete('localhost:8000/api/delete.php', {data: {id: bookId}})
+      axios.post('http://localhost:8000/api/delete.php', {
+        action: 'delete',
+        id: bookId
+      })
     }
   },
   async created() {
