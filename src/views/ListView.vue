@@ -42,11 +42,12 @@ export default {
       this.$router.push({name: 'edit', params: {bookId: bookId}})
 
     },
-    deleteBook(bookId){
-      axios.post('http://localhost:8000/api/delete.php', {
+    async deleteBook(bookId){
+      await axios.post('http://localhost:8000/api/delete.php', {
         action: 'delete',
         id: bookId
       })
+      this.$router.go()
     }
   },
   async created() {
