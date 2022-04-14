@@ -61,9 +61,12 @@ export default {
 
 
 <style scoped>
+@import '@/assets/css/style.css';
+
 .styled-table {
   border-collapse: collapse;
-  margin: 25px 0;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 0.9em;
   font-family: sans-serif;
   min-width: 800px;
@@ -71,7 +74,7 @@ export default {
 }
 
 .styled-table thead tr {
-  background-color: #009879;
+  background-color: royalblue;
   color: #ffffff;
 }
 
@@ -89,11 +92,11 @@ export default {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid royalblue;
 }
 
 .styled-table tbody tr.active-row {
   font-weight: bold;
-  color: #009879;
+  color: royalblue;
 }
 </style>

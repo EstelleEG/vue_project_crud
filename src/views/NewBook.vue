@@ -12,7 +12,8 @@
 
     <input type="text" v-model="book.designation">
 
-    <div @click="newBook">NEW</div>
+    <div @click="newBook"><button>Add new book</button></div>
+    
   </div>
 </template>
 
