@@ -3,7 +3,7 @@
 		<div class="courses-container" >
 			<div class="course" >
 				<div class="course-preview">
-					<img :src="`${require('../assets/imgs/' + book.id + '.jpg')}`" :alt="book.name" />
+					<img :src="{{book.imageURL}}" :alt="book.name" />
 				</div>
 				<div class="course-info">
 					<div>{{ book.name }}</div>
@@ -35,10 +35,12 @@ export default {
 	async created() {
 		const { bookId } = this.$route.params
 		console.log(bookId)
-		const apiDetailsUri = 'http://localhost:8000/api/single_read.php/?id=' + bookId
+		const apiDetailsUri = 'http://picwebloire.fr/estelle/back/api/single_read.php/?id=' + bookId
 		const oneBook = await axios.get(apiDetailsUri)
 		this.book = oneBook.data
-	}
+		console.log(this.book)
+
+	},
 }
 </script>
 <style scoped>

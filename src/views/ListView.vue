@@ -42,16 +42,17 @@ export default {
       this.$router.push({name: 'edit', params: {bookId: bookId}})
 
     },
-    async deleteBook(bookId){
-      await axios.post('http://localhost:8000/api/delete.php', {
+  async deleteBook(bookId){
+      let index = this.books.indexOf(bookId);
+      this.books.splice(index, 1);
+      await axios.post('http://picwebloire.fr/estelle/back/api/delete.php', {
         action: 'delete',
         id: bookId
       })
-      this.$router.go()
     }
   },
   async created() {
-    const books = await axios.get("http://localhost:8000/api/read.php")
+    const books = await axios.get("http://picwebloire.fr/estelle/back/api/read.php")
     this.books = books.data
     console.log(this.books)
     console.log('created')
