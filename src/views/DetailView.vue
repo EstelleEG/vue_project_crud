@@ -3,7 +3,8 @@
 		<div class="courses-container" >
 			<div class="course" >
 				<div class="course-preview">
-					<img :src="{{book.imageURL}}" :alt="book.name" />
+					<img :src="book.imageURL" :alt="book.name" />
+          {{book.imageURL}}
 				</div>
 				<div class="course-info">
 					<div>{{ book.name }}</div>
